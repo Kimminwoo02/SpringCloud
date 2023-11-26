@@ -18,6 +18,9 @@ spring:
           uri: http://localhost:8081/
           predicates:
             - Path=/first-service/**
+          filters:
+            - AddRequestHeader=first-request, first-request-header2 # 키, 벨류 형태로 추가
+            - AddResponseHeader=first-response, first-response-header2
             # localhost ? 127.0.0.1 ? ????.
             # 127.0.0.1:8000/first-service/** ? ???? # http://localhost:8081/first-service/**? ??? ?????.
 
@@ -25,3 +28,6 @@ spring:
           uri: http://localhost:8082/
           predicates:
             - Path=/second-service/**
+          filters:
+            - AddRequestHeader=second-request, second-request-header2 # 키, 벨류 형태로 추가
+            - AddResponseHeader=second-response, second-response-header2
