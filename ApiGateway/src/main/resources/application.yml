@@ -33,3 +33,9 @@ spring:
             #            - AddRequestHeader=second-request, second-request-header2 # 키, 벨류 형태로 추가
             #            - AddResponseHeader=second-response, second-response-header2
             - CustomFilter
+      default-filters:
+        - name: GlobalFilter
+          args:
+            baseMessage: Spring Cloud Gateway Global Filter
+            preLogger: true
+            postLogger: true
